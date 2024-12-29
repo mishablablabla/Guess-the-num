@@ -1,0 +1,148 @@
+@import url("https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Press Start 2P", cursive;
+  background: #05004e;
+  background-image: repeating-linear-gradient(
+    -45deg,
+    #ff66b2,
+    #ff66b2 10px,
+    #ffcc66 10px,
+    #ffcc66 20px
+  );
+  color: #00ffcc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  overflow: hidden;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #ff66b2;
+}
+
+.container {
+  text-align: center;
+  background: rgba(0, 0, 0, 0.6);
+  border: 4px solid #ff66b2;
+  border-radius: 15px;
+  padding: 25px 35px;
+  box-shadow: 0 0 15px 3px #ff66b2, inset 0 0 8px 3px #ffcc66;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: #00ffcc;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #ffcc66;
+}
+
+.instruction {
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+  color: #ffcc66;
+  text-shadow: 2px 2px 0 #000, -2px -2px 0 #ffcc66;
+}
+
+input[type="number"] {
+  padding: 10px 15px;
+  border: 2px solid #00ffcc;
+  border-radius: 5px;
+  width: 80%;
+  margin-bottom: 15px;
+  font-size: 1rem;
+  color: #ff66b2;
+  background: #000;
+  text-shadow: none;
+}
+
+button {
+  padding: 10px 25px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  font-weight: bold;
+  text-transform: uppercase;
+  transition: 0.3s ease;
+  box-shadow: 3px 3px 0 #ff66b2, -3px -3px 0 #ffcc66;
+}
+
+button#submitBtn {
+  background: #00ffcc;
+  color: #000;
+}
+
+button#submitBtn:hover {
+  background: #00ff80;
+  box-shadow: 3px 3px 0 #00ff80, -3px -3px 0 #ffcc66;
+}
+
+button#restartBtn {
+  background: #ff66b2;
+  color: #fff;
+  margin-top: 10px;
+}
+
+button#restartBtn:hover {
+  background: #ff3385;
+  box-shadow: 3px 3px 0 #ff3385, -3px -3px 0 #ffcc66;
+}
+
+.feedback {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: #ffcc66;
+}
+
+.retry-container {
+  display: flex;
+  align-items: center;
+  gap: 250px;
+}
+
+@keyframes emojiFly {
+  0% {
+    opacity: 1;
+    transform: translate(0, 0) rotate(0deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--x), var(--y)) rotate(720deg);
+  }
+}
+
+.emoji {
+  position: absolute;
+  font-size: 2rem;
+  animation: emojiFly 5s ease-in forwards;
+  pointer-events: none;
+}
+
+.congratsText {
+  color: #00ffcc;
+  font-weight: bold;
+  font-size: 2rem;
+  animation: pulseText 1s infinite;
+}
+
+@keyframes pulseText {
+  0% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.8;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
